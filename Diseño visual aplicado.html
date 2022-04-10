@@ -49,13 +49,13 @@
 
   }
   .fullCard {
-    width: 50%;
+    width: 60%;
     border: 1px solid #ccc;
     border-radius: 10px;
-    margin: 10px 5px;
+    margin: 10px 0px;
     padding: 4px;
-    position: relative;
-    left: 25%;
+    position:relative;
+    left: 20%;
   }
   .cardContent {
     padding: 10px;
@@ -73,6 +73,20 @@
   #lista {
     position: initial;
   }
+
+  #left {
+    float: left;
+    width: 45%;
+    left: 0%;
+    background-color: rgba(20, 187, 48, 0.582);
+  }
+
+  #right {
+    float: right;
+    width: 45%;
+    left: 0%;
+    background-color: rgba(158, 52, 66, 0.822);
+  }
 </style>
 <head>
     
@@ -83,32 +97,37 @@
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <div class="fullCard shadow" id="lista">
-    <h3><strong>Things cats love:</strong></h3>
-    <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
-    </ul>
-    <hr>
-    <h3><strong>Top 3 things cats hate:</strong></h3>
-    <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
-    </ol>
+  <div>
+    <div  class="fullCard shadow" id="left">
+      <h3><strong>Things cats love:</strong></h3>
+      <ul>
+        <li>cat nip</li>
+        <li>laser pointers</li>
+        <li>lasagna</li>
+      </ul>
+    </div>
+    <div  class="fullCard shadow" id="right">
+      <h3><strong>Top 3 things cats hate:</strong></h3>
+      <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+      </ol>
+    </div>
   </div>
-
-  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
-  </form>
-
+  <div style="width: 40%;">
+    <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
+      <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+      <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+      <label><input type="checkbox" name="personality" checked> Loving</label>
+      <label><input type="checkbox" name="personality"> Lazy</label>
+      <label><input type="checkbox" name="personality"> Energetic</label><br>
+      <hr>
+      <input type="text" placeholder="cat photo URL" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
   <div class="fullCard shadow">
     <div class="cardContent">
       <div class="cardText">
