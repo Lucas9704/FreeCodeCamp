@@ -5,6 +5,10 @@
     color: red;
   }
 
+  body {
+    background: linear-gradient(20deg, #FFA177, turquoise);
+  }
+
   h2 {
     font-family: Lobster, monospace;
   }
@@ -14,6 +18,7 @@
     font-size: 16px;
     font-family: monospace;
     text-transform: uppercase;
+    z-index: 3;
   }
 
   h4 {
@@ -30,14 +35,14 @@
   }
 
   .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 50%;
+    border-color: rgba(87, 21, 161, 0.74);
+    border-width: 8px;
+    border-style: dashed;
+    border-radius: 40%;
   }
 
   .smaller-image {
-    width: 100px;
+    width: 110px;
   }
 
   .silver-background {
@@ -67,7 +72,7 @@
 
   a:hover {
     color: red;
-    font-size: 17px;
+    font-size: 17px;      
   }
 
   #lista {
@@ -78,7 +83,7 @@
     float: left;
     width: 45%;
     left: 0%;
-    background-color: rgba(20, 187, 48, 0.582);
+    background-color: hsla(120, 77%, 45%, 0.788);
   }
 
   #right {
@@ -87,6 +92,68 @@
     left: 0%;
     background-color: rgba(158, 52, 66, 0.822);
   }
+
+  #left:hover {
+    transform: scale(1.05);
+  }
+
+  #right:hover {
+    transform: scale(1.05);
+  }
+
+  .heart {
+    position:absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+  }
+
+  .heart::after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+
+  }
+  .heart::before {
+    content: "";
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+
+  #anime {
+    animation-name: ram;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes ram {
+    0% {
+      transform: scale(1) rotate(-45deg);
+    }
+    25% {
+      transform: scale(0.85) rotate(-45deg);
+    }
+    50% {
+      transform: scale(0.7) rotate(-45deg);
+    }
+    }
 </style>
 <head>
     
@@ -95,13 +162,14 @@
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img class="smaller-image thick-green-border" src="data:image/jpeg;base64,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" alt="A cute orange cat lying on its back."></a>
 
   <div>
-    <div  class="fullCard shadow" id="left">
+    <div  class="fullCard shadow" id="left" >
+      <div class="heart" id="anime"></div>
       <h3><strong>Things cats love:</strong></h3>
       <ul>
-        <li>cat nip</li>
+        <li >cat nip</li>
         <li>laser pointers</li>
         <li>lasagna</li>
       </ul>
@@ -128,7 +196,7 @@
     </form>
   </div>
   
-  <div class="fullCard shadow">
+  <div class="fullCard shadow silver-background">
     <div class="cardContent">
       <div class="cardText">
         <h4><em>Google</em> <s>gogle no</s></h4>
